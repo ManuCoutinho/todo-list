@@ -34,9 +34,7 @@ export function TaskList() {
     setNewTaskTitle("");
   }
 
-  function handleToggleTaskCompletion(id: number) {
-    //!checked task
-
+  function handleToggleTaskCompletion(id: number) {    
     const newTasks = tasks.map((task) =>
       task.id === id
         ? {
@@ -48,8 +46,7 @@ export function TaskList() {
     setTasks(newTasks);
   }
 
-  function handleRemoveTask(id: number) {
-    //!delete task
+  function handleRemoveTask(id: number) {    
     const filteredTasks = tasks.filter((task) => task.id !== id);
     setTasks(filteredTasks);
   }
@@ -66,6 +63,7 @@ export function TaskList() {
             value={newTaskTitle}
           />
           <ButtonCreateTask
+           role="criar"
             type="submit"
             data-testid="add-task-button"
             onClick={handleCreateNewTask}            
@@ -94,6 +92,7 @@ export function TaskList() {
                 <p>{task.title}</p>
               </div>
               <DeleteButton
+                name="excluir"
                 type="button"
                 data-testid="remove-task-button"
                 onClick={() => handleRemoveTask(task.id)}

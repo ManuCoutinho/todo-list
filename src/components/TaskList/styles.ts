@@ -4,6 +4,7 @@ export const TaskContainer = styled.section`
   max-width: 60vw;
   margin: -12rem auto 0;
   padding: 70px 60px;
+  position: relative;
 
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);

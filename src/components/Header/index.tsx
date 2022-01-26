@@ -24,46 +24,50 @@ export function Header({ toggleTheme }: Props) {
           width="90" 
           role="logo"        
           />
+       <label htmlFor="toggleTheme">
         <Switch
-          onChange={toggleTheme}
-          checked={theme.title === "dark"}
-          onColor={darken(0.6, theme.colors.checkboxTask)}
-          offColor={theme.colors.mainBackground}
-          offHandleColor={theme.colors.checkboxTask}
-          onHandleColor={theme.colors.textDefault}
-          height={25}
-          width={62}
-          handleDiameter={30}
-          uncheckedIcon={
-            <span
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "100%",
-                fontSize: 15,
-                paddingRight: 3,
-              }}
-            >
-              <WiDaySunny />
-            </span>
-          }
-          checkedIcon={
-            <span
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "100%",
-                fontSize: 15,
-                paddingRight: 2,
-                paddingBottom: 2,
-              }}
-            >
-              <FiMoon />
-            </span>
-          }
-        />
+            role="switch theme"
+            name="toggleTheme"
+            onChange={toggleTheme}
+            checked={theme.title === "dark"}
+            onColor={darken(0.6, theme.colors.checkboxTask)}
+            offColor={theme.colors.mainBackground}
+            offHandleColor={theme.colors.checkboxTask}
+            onHandleColor={theme.colors.textDefault}
+            height={25}
+            width={62}
+            handleDiameter={30}
+            uncheckedIcon={
+              <span
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "100%",
+                  fontSize: 15,
+                  paddingRight: 3,
+                }}
+              >
+                <WiDaySunny />
+              </span>
+            }
+            checkedIcon={
+              <span
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "100%",
+                  fontSize: 15,
+                  paddingRight: 2,
+                  paddingBottom: 2,
+                }}
+              >
+                <FiMoon />
+              </span>
+            }
+          />
+       </label>
       </div>
     </HeaderContainer>
   )

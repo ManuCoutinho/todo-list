@@ -28,7 +28,7 @@ html {
 body {
   background:  ${({ theme }) => theme.colors.mainBackground};
   color:  ${({ theme }) => theme.colors.textDefault};
-  font: 16px "Poppins", Arial, sans-serif;
+  font: 16px "Poppins", Arial, sans-serif;  
 }
 
 body,
