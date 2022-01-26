@@ -17,30 +17,26 @@
 }
 
 .taskHeader {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  h2 {
-    color: var(--gray-750);
-    font-size: 2.25rem;
-  }
+  @include flexFull(row, space-between, no-wrap);
+    h2 {
+      color: var(--gray-750);
+      font-size: 2.25rem;
+    }
 }
 
 .formGroup {
-  display: flex;
+  @include flexBasic();
   gap: 0.75rem;
-  align-items: center;
 
   input {
     flex: 1;
     background: var(--gray-50);
     border: 0;
-    border-radius: 8px;
+    border-radius: $radiusSmall;
     color: var(--gray-800);
     padding: 0.75rem 1.5rem;
     outline: 0;
+    width: 100%;
 
     &:focus {
       border: 1px solid var(--green-300);
@@ -49,24 +45,26 @@
     &::placeholder {
       color: var(--gray-750);
     }
+  }  
+}
+
+.buttonCreateTask {
+  @include flexDirection(row);
+  background: var(--green-500);
+  border: 0;
+  border-radius: $radiusSmall;
+  color: var(--white);  
+  font-weight: 600;
+  padding: 0.875rem;
+  outline: 0;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(0.9);
+    transition: all 0.2s;
   }
-
-  button {
-    align-items: center;
-    border-radius: $radiusSmall;
-    border: 0;
-    background: var(--green-500);
-    color: var(--white);
-    display: flex;
-    flex-direction: row;
-    font-weight: 600;
-    padding: 0.875rem;
-    transition: filter 0.2s;
-
-    &:hover {
-      filter: brightness(0.95);
-      transition: all 0.2s;
-    }
+  &:focus{
+    border: 1px solid var(--green-300);
   }
 }
 
@@ -77,21 +75,18 @@
     list-style: none;
 
     li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flex(space-between);      
       border-bottom: 1px solid var(--gray-50);
       padding: 1rem 0;      
     }
 
     div {
-      display: flex;
-      align-items: center;
-      gap: 14px;
+      @include flexBasic();
+      gap: 0.875rem;
       outline: 0;
     
       p {
-        font-size: 1rem;
+        font-size: 1em;
         color: var(--gray-800);
       }
     
@@ -102,7 +97,6 @@
         }
       }  
     }
-
   }
 }
 
@@ -110,8 +104,8 @@
 .checkboxContainer {
   display: block;
   position: relative;
-  padding-left: 14px;
-  margin-bottom: 18px;
+  padding-left: 0.875rem;
+  margin-bottom: 1.125rem;
 
   input {
     position: absolute;
@@ -120,53 +114,55 @@
     height: 0;
     width: 0;
 
-        &:checked {
-          & ~ .checkmark {
-            background-color: var(--blue-500);
-          }
-
-          & ~ .checkmark:after {
-            display: block;
-          }
-        }
-      }
-
-      button {
-        background: transparent;
-        border: 0;
-
-        svg {
-          color: var(--red-300);
-        }
-
-        &:hover {
-          svg {
-            filter: brightness(0.5);
-          }
-        }
-      }
+  &:checked {
+    & ~ .checkmark {
+      background-color: var(--purple-700);
+      transform: scale(1.0);
+      transition: all 0.2s;
     }
 
-
-    .checkmark {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 16px;
-      height: 16px;
-      background-color: var(--gray-50);
-      border-radius: 2px;
-
-      &:after {
-        content: "";
-        position: absolute;
-        display: none;
-        left: 6px;
-        top: 3px;
-        width: 3px;
-        height: 6px;
-        border: solid var(--white);
-        border-width: 0 2px 2px 0;
-        transform: rotate(45deg);
-      }
+    & ~ .checkmark:after {
+      display: block;
     }
+  }
+} 
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--gray-50);
+  border-radius: 2px;
+  transition: transform 0.2s;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 3px;
+    width: 3px;
+    height: 6px;
+    border: solid var(--white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+.deleteButton { 
+  background: transparent;
+  border: 0;
+  outline: 0;
+    svg {
+      color: var(--red-300);
+    }
+
+    &:hover {
+      svg {
+        filter: brightness(0.5);
+      }
+    }  
+}

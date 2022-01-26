@@ -1,34 +1,26 @@
+@import "./variables";
+
 @mixin flex($justify) {
   display: flex;
   align-items: center;
   justify-content: $justify;
 }
 
-@mixin flexDirection($direction, $wrap) {
-  display: flex;  
-  flex-direction: $direction;
-  flex-wrap: $wrap;
+@mixin flexBasic() {
+  display: flex;
+  align-items: center;  ;
 }
 
-@mixin customFlex($direction, $wrap) {
+@mixin flexFull($direction,  $justify, $wrap) {
   display: flex;
   align-items: center;  
   flex-direction: $direction;
+  justify-content: $justify;
   flex-wrap: $wrap;
 }
 
-@mixin inputDefault($color1, $color2, $margin, $color3, $width) {
-  background: $color1;
-  border: 1px solid $color2;
-  border-radius: $radius;
-  height: 3.75rem;
-  margin-right: $margin;
-  padding: 0.9375rem;
-  width: $width;
-
-  &::placeholder {
-    color: $color3;
-    font-size: 1.125em;
-    line-height: 1.875em;
-  }
+@mixin flexDirection($direction) {
+  display: flex;
+  align-items: center;
+  flex-direction: $direction;;
 }
