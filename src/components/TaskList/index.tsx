@@ -1,7 +1,16 @@
 import { useState } from "react";
 import { FiTrash, FiCheckSquare } from "react-icons/fi";
 
-import styles from "./styles.module.scss";
+import { 
+    ButtonCreateTask, 
+    CheckboxContainer, 
+    Checkmark, 
+    DeleteButton, 
+    FormGroup,   
+    TaskContainer, 
+    TaskHeader, 
+    TaskListContainer, 
+  } from "./styles";
 
 interface Task {
   id: number;
@@ -46,61 +55,56 @@ export function TaskList() {
   }
 
   return (
-    <section className={styles.taskContainer}>
-      <div className={styles.taskHeader}>
+    <TaskContainer>
+      <TaskHeader>
         <h2>Minhas tasks</h2>
-
-        <div className={styles.formGroup}>
+        <FormGroup>
           <input
             type="text"
             placeholder="Adicionar nova tarefa"
             onChange={(e) => setNewTaskTitle(e.target.value)}
             value={newTaskTitle}
           />
-          <button
+          <ButtonCreateTask
             type="submit"
             data-testid="add-task-button"
-            onClick={handleCreateNewTask}
-            className={styles.buttonCreateTask}
+            onClick={handleCreateNewTask}            
           >
             <FiCheckSquare size={16} color="#FFFFFF" />
-          </button>
-        </div>
-      </div>
+          </ButtonCreateTask>
+        </FormGroup>
+      </TaskHeader>
 
-      <main className={styles.taskList}>
+      <TaskListContainer>
         <ul>
           {tasks.map((task) => (
             <li key={task.id}>
               <div
-                className={task.isComplete ? styles.completed : ""}
+                className={task.isComplete ? '.completed' : ""}
                 data-testid="task"
               >
-                <label className={styles.checkboxContainer} aria-label="Concluir task">
-                  <input
-                    type="checkbox"
-                    readOnly
-                    checked={task.isComplete}
-                    onClick={() => handleToggleTaskCompletion(task.id)}
+                <CheckboxContainer aria-label="Concluir task">
+                  <input 
+                  type="checkbox" readOnly
+                  checked={task.isComplete}
+                  onClick={() => handleToggleTaskCompletion(task.id)}
                   />
-                  <span className={styles.checkmark}></span>
-                </label>
+                  <Checkmark></Checkmark>                  
+                </CheckboxContainer>
                 <p>{task.title}</p>
               </div>
-
-              <button
+              <DeleteButton
                 type="button"
                 data-testid="remove-task-button"
                 onClick={() => handleRemoveTask(task.id)}
-                role="button" aria-label="Deletar task"
-                className={styles.deleteButton}
+                role="button" aria-label="Deletar task"                
               >
                 <FiTrash size={16} />
-              </button>
+              </DeleteButton>
             </li>
           ))}
         </ul>
-      </main>
-    </section>
+      </TaskListContainer>
+    </TaskContainer>
   );
 }

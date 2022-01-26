@@ -1,18 +1,6 @@
-:root {
-  --gray-10: #F2F2F3;
-  --gray-50: #EBEBEB;
-  --gray-200: #A09CB1;
-  --gray-750: #3D3D4D;
-  --gray-800: #1C1C29;
-  --gray-850: #121214;
-  --green-300: #7AE7c7;
-  --green-500: #1C9B75;
-  --lilac-500: #E2A0FF;
-  --purple-700: #58355E;
-  --red-300: 	#C9184a;
-  --white: #FFFFFF;
-}
+import { createGlobalStyle } from "styled-components";
 
+export const GlobalStyles = createGlobalStyle`
 * {
   box-sizing: border-box;
   margin: 0;
@@ -38,8 +26,8 @@ html {
 }
 
 body {
-  background: var(--gray-10);
-  color: var(--gray-850);
+  background:  ${({ theme }) => theme.colors.mainBackground};
+  color:  ${({ theme }) => theme.colors.textDefault};
   font: 16px "Poppins", Arial, sans-serif;
 }
 
@@ -68,3 +56,4 @@ h6 {
 button {
   cursor: pointer;
 }
+`

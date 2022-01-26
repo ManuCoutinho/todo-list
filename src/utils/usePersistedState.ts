@@ -1,11 +1,6 @@
 import {useState, useEffect } from "react";
 
-type StorageProps = {
-  key: string;
-  task: string[],
-}
-
-function usePersistedStorage(StorageProps: {key, task}){
+function usePersistedState(key, initialState){
   const [state, setState] = useState(()=>{
 
     const storageValue = localStorage.getItem(key);
@@ -13,7 +8,7 @@ function usePersistedStorage(StorageProps: {key, task}){
     if(storageValue) {
       return JSON.parse(storageValue);
     } else {
-      return task;
+      return initialState;
     }
   });
   
@@ -24,4 +19,4 @@ function usePersistedStorage(StorageProps: {key, task}){
   return [state, setState];
 }
 
-export default  usePersistedStorage;
+export default usePersistedState;
