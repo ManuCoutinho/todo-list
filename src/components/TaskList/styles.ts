@@ -8,12 +8,14 @@ export const TaskContainer = styled.section`
 
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
+  -moz-backdrop-filter: blur(16px) saturate(180%);
   background-color: ${({ theme }) => theme.colors.glassColor};
   border: 1px solid ${({ theme }) => theme.colors.borderGlass};
   border-radius: 16px;
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 `
 
 

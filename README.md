@@ -8,17 +8,20 @@
 
 <br/>
 <div style="margin: 16px 0px"> 
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" style="margin-right: 16px"/> 
-<img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" style="margin-right: 16px"/> 
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" style="margin-right: 16px"/>
-<img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E">
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" style="margin-right: 16px">
+<img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" style="margin-right: 16px">
+<img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" /> 
 </div>
 <br/>
 <br/>
 
 ## 💻 Sobre o projeto
 
-Mini projeto que cria uma lista de tarefas ou lembretes, quais podem ser excluídos conforme a necessidade do(a) usuário(a). Você pode encontra o deploy da aplicação em ()[].
+Mini projeto que cria uma lista de tarefas ou lembretes, quais podem ser excluídos conforme a necessidade do(a) usuário(a). Disponível em 🌞 e 🌙 modes.
+
+Você pode encontrar o deploy da aplicação em [aqui 🔗](https://www).
+
 <br/>
 
 # Uso
@@ -35,18 +38,19 @@ Optei por utilizar o template React para Vite.js para otimizar o build da aplica
 
 ## 🔨 Tecnologias:
 
-* Aplicação desenvolvida no template __React__ do [_Vite.js_](https://vitejs.dev/) com utilização do TypeScript
-* Estilização com [_Sass_](https://sass-lang.com/) em módulos para aplicação de _CSS scoped_
+* Aplicação desenvolvida no template __React__ do [_Vite.js_](https://vitejs.dev/) com utilização do __TypeScript__
+* Estilização com [_Styled-Components_](https://styled-components.com/)
 * Libs:
-   * [React Icons](https://react-icons.github.io/react-icons/) 
+   * [React Icons](https://react-icons.github.io/react-icons/)
+   * [Polished](https://polished.js.org/) 
+   * [React Switch](https://react-switch.netlify.app/)  
 * Fonte: Poppins by [_Google Fonts_](https://fonts.google.com/)
 * Interface adaptada para dispositivos mobile 📱
 
-
 <br/>
-<br/>
-<div>
-<img src="http://ForTheBadge.com/images/badges/built-with-love.svg"/>
-</div>
 
 💃🏽 Projeto em desenvolvimento!
+#
+
+<img src="http://ForTheBadge.com/images/badges/built-with-love.svg"/>
+

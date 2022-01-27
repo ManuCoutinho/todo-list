@@ -18,10 +18,12 @@ gap: 0.5rem;
     transition: filter 0.2s;
       a:hover {
         filter: drop-shadow(0px 5px 5px ${({theme}) => theme.colors.borderColor});
+        filter: -webkit-drop-shadow(0px 5px 5px ${({theme}) => theme.colors.borderColor});
+        filter: -moz-drop-shadow(0px 5px 5px ${({theme}) => theme.colors.borderColor});
         transition: color 0.2s;
       }
   }
 
-  
+   
 
 `
