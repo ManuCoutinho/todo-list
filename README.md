@@ -20,7 +20,7 @@
 
 Mini projeto que cria uma lista de tarefas ou lembretes, quais podem ser excluídos conforme a necessidade do(a) usuário(a). Disponível em 🌞 e 🌙 modes.
 
-Você pode encontrar o deploy da aplicação em [aqui 🔗](https://www).
+Você pode encontrar o deploy da aplicação em [aqui 🔗](https://sharp-cray-1a5038.netlify.app/).
 
 <br/>
 

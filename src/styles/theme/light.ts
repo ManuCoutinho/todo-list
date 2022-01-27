@@ -1,4 +1,4 @@
-export default{
+export default {
   title: "light",
   colors: {
     mainBackground: "#F2F2F3", 

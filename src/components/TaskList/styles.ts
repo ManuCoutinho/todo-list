@@ -8,7 +8,8 @@ export const TaskContainer = styled.section`
 
   width: min(60vw, 80%);
   margin: -12rem auto 0;
-  padding: 4.375rem 3.75rem;  
+  padding: 4.375rem 3.75rem;
+  position: relative;  
 
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -55,7 +56,7 @@ export const FormGroup = styled.form`
     color: ${({ theme }) => theme.colors.textSecondary};
     padding: 0.75rem 1.5rem;
     outline: 0;
-   
+    flex-grow: 1; 
       &:focus {
         border: 1px solid ${({ theme }) => theme.colors.borderColor};
       }
@@ -85,7 +86,7 @@ export const ButtonCreateTask = styled.button`
   &:focus {
     border: 1px solid ${({ theme }) => theme.colors.borderColor};
   }
-`
+`;
 
 export const TaskListContainer = styled.main`
   margin-top: 3rem;
@@ -120,7 +121,7 @@ export const TaskListContainer = styled.main`
       }
     }
   }
-`
+`;
 
 export const CheckboxContainer = styled.label`
   display: block;
@@ -147,7 +148,7 @@ export const CheckboxContainer = styled.label`
       }
     }
   }
-`
+`;
 export const Checkmark = styled.span`
   position: absolute;
   top: 0;
@@ -170,7 +171,7 @@ export const Checkmark = styled.span`
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
   }
-`
+`;
 
 export const DeleteButton = styled.button`
   background: transparent;
@@ -185,4 +186,4 @@ export const DeleteButton = styled.button`
       filter: brightness(0.5);
     }
   }
-`
+`;

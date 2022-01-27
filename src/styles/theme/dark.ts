@@ -2,7 +2,7 @@ export default {
   title: "dark",
   colors: {
     mainBackground: "#180F1A",
-    backgroundInput: "#A09CB1",
+    backgroundInput: "#464646",
     textMuted: "#C3C3C3",
     textPrimary: "#FFFFFF",
     textSecondary: "#FFFFF1",

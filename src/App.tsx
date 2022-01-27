@@ -7,6 +7,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styles/global";
 import dark from "./styles/theme/dark";
 import light from "./styles/theme/light";
+import ErrorBoundary from "./ErrorBoundary";
 
 function App() {  
  const [theme, setTheme] = usePersistedState('theme', light);
@@ -16,11 +17,14 @@ function App() {
 };
 
 return(
-    <ThemeProvider theme={theme}>
-      <GlobalStyles/>
-      <Header toggleTheme={toggleTheme}/>
-      <TaskList/>     
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider theme={theme}>
+        {console.log(theme)}
+        <GlobalStyles/>
+        <Header toggleTheme={toggleTheme}/>
+        <TaskList/>     
+      </ThemeProvider>
+    </ErrorBoundary>
   )
 }
 
