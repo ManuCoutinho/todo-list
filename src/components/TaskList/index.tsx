@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import { FiTrash, FiCheckSquare } from "react-icons/fi";
 
 import { 
@@ -22,7 +22,8 @@ export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState("");
 
-  function handleCreateNewTask() {
+  function handleCreateNewTask(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     if (!newTaskTitle) return;
 
     const newTask = {
@@ -55,7 +56,7 @@ export function TaskList() {
     <TaskContainer>
       <TaskHeader>
         <h2>Minhas tasks</h2>
-        <FormGroup>
+        <FormGroup onSubmit={handleCreateNewTask}>
           <input
             type="text"
             placeholder="Adicionar nova tarefa"
@@ -66,7 +67,7 @@ export function TaskList() {
            role="criar"
             type="submit"
             data-testid="add-task-button"
-            onClick={handleCreateNewTask}            
+                   
           >
             <FiCheckSquare size={16} color="#FFFFFF" />
           </ButtonCreateTask>

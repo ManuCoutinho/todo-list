@@ -19,6 +19,12 @@ export const GlobalStyles = createGlobalStyle`
   }
 }
 
+@media (max-width: 27em) {
+  html {
+    font-size: 80%;
+  }
+}
+
 body,
 html {
   scroll-behavior: smooth;
@@ -28,7 +34,7 @@ html {
 body {
   background:  ${({ theme }) => theme.colors.mainBackground};
   color:  ${({ theme }) => theme.colors.textDefault};
-  font: 16px "Poppins", Arial, sans-serif;  
+  font: 16px "Poppins", Arial, sans-serif;   
 }
 
 body,

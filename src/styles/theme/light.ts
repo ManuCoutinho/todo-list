@@ -6,6 +6,7 @@ export default{
     textMuted: "#A09CB1",
     textPrimary: "#3D3D4D",
     textDefault: "#121214",
+    borderColor: "#7AE7c7",
     buttonCreateTask: "#1C9B75",
     checkboxTask: "#58355E",
     buttonDeleteTask: "#C9184a",

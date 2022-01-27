@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
 export const TaskContainer = styled.section`
-  max-width: 60vw;
+  @media (max-width: 37.5em){
+    width: 100%;
+    padding: 4rem 1.85rem;
+  }
+
+  width: min(60vw, 80%);
   margin: -12rem auto 0;
-  padding: 70px 60px;
-  position: relative;
+  padding: 4.375rem 3.75rem;  
 
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -18,46 +22,48 @@ export const TaskContainer = styled.section`
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 `
 
+export const TaskHeader = styled.div`
+  @media (max-width: 50em) {
+    flex-direction: column;
+    margin: 0 auto;    
+  }
 
-
-export const TaskHeader = styled.div `
-  display: flex;
-  align-items: center;  
-  flex-direction: row;
-  justify-content: space-between;
-    h2 {
-      color: ${({ theme }) => theme.colors.textPrimary};
-      font-size: 2.25em;
-    }
-`
-
-export const FormGroup = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+
+  h2 {
+    color: ${({ theme }) => theme.colors.textPrimary};
+    font-size: 2.25em;
+  }
+`
+
+export const FormGroup = styled.form`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 
   input {
     display: flex;
     align-items: center;    
-    flex: 1;
     background: ${({ theme }) => theme.colors.backgroundInput};
     border: 0;
     border-radius: 8px;
     color: ${({ theme }) => theme.colors.textSecondary};
     padding: 0.75rem 1.5rem;
     outline: 0;
-    width: 100%;
-
-    &:focus {
-      border: 1px solid ${({ theme }) => theme.colors.borderColor};
-    }
-
-    &::placeholder {
-      color: ${({ theme }) => theme.colors.textPrimary};
-    }
-  }  
-  `
-
+   
+      &:focus {
+        border: 1px solid ${({ theme }) => theme.colors.borderColor};
+      }
+      &::placeholder {
+        color: ${({ theme }) => theme.colors.textPrimary};
+      }
+  }
+`;
 
 export const ButtonCreateTask = styled.button`
   display: flex;
@@ -66,7 +72,7 @@ export const ButtonCreateTask = styled.button`
   background: ${({ theme }) => theme.colors.buttonCreateTask};
   border: 0;
   border-radius: 8px;
-  color: ${({ theme }) => theme.colors.white};  
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 600;
   padding: 0.875rem;
   outline: 0;
@@ -76,7 +82,7 @@ export const ButtonCreateTask = styled.button`
     filter: brightness(0.9);
     transition: all 0.2s;
   }
-  &:focus{
+  &:focus {
     border: 1px solid ${({ theme }) => theme.colors.borderColor};
   }
 `
@@ -90,9 +96,9 @@ export const TaskListContainer = styled.main`
     li {
       display: flex;
       align-items: center;
-      justify-content: space-between;     
+      justify-content: space-between;
       border-bottom: 1px solid ${({ theme }) => theme.colors.backgroundInput};
-      padding: 1rem 0;      
+      padding: 1rem 0;
     }
 
     div {
@@ -100,28 +106,27 @@ export const TaskListContainer = styled.main`
       align-items: center;
       gap: 0.875rem;
       outline: 0;
-    
+
       p {
         font-size: 1em;
         color: ${({ theme }) => theme.colors.textSecondary};
       }
-    
+
       &.completed {
         p {
           text-decoration: line-through;
           opacity: 0.6;
         }
-      }  
+      }
     }
   }
 `
-
 
 export const CheckboxContainer = styled.label`
   display: block;
   position: relative;
   padding-left: 0.875rem;
-  margin-bottom: 1.125rem;  
+  margin-bottom: 1.125rem;
 
   input {
     position: absolute;
@@ -130,21 +135,19 @@ export const CheckboxContainer = styled.label`
     height: 0;
     width: 0;
 
-  &:checked {
-    & ~ span {
-      background-color: ${({ theme }) => theme.colors.checkboxTask};
-      transform: scale(1.0);
-      transition: all 0.2s;
-    }
+    &:checked {
+      & ~ span {
+        background-color: ${({ theme }) => theme.colors.checkboxTask};
+        transform: scale(1);
+        transition: all 0.2s;
+      }
 
-    & ~ span:after {
-      display: block;
+      & ~ span:after {
+        display: block;
+      }
     }
   }
-} 
 `
-
-
 export const Checkmark = styled.span`
   position: absolute;
   top: 0;
@@ -169,17 +172,17 @@ export const Checkmark = styled.span`
   }
 `
 
-export const DeleteButton = styled.button` 
+export const DeleteButton = styled.button`
   background: transparent;
   border: 0;
   outline: 0;
-    svg {
-      color: ${({ theme }) => theme.colors.buttonDeleteTask};
-    }
+  svg {
+    color: ${({ theme }) => theme.colors.buttonDeleteTask};
+  }
 
-    &:hover {
-      svg {
-        filter: brightness(0.5);
-      }
-    }  
+  &:hover {
+    svg {
+      filter: brightness(0.5);
+    }
+  }
 `

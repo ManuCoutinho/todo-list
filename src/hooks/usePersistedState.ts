@@ -1,6 +1,6 @@
 import {useState, useEffect } from "react";
 
-function usePersistedState(key, initialState){
+function usePersistedState(key: string, initialState: any){
   const [state, setState] = useState(()=>{
 
     const storageValue = localStorage.getItem(key);
