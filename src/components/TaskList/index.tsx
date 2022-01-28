@@ -23,16 +23,16 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState("");
 
   function handleCreateNewTask(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (!newTaskTitle) return;
+    event.preventDefault()
+    if (!newTaskTitle) return
 
     const newTask = {
       id: Math.random(),
       title: newTaskTitle,
       isComplete: false,
-    };
-    setTasks((oldState) => [...oldState, newTask]);
-    setNewTaskTitle("");
+    }
+    setTasks((oldState) => [...oldState, newTask])
+    setNewTaskTitle("")
   }
 
   function handleToggleTaskCompletion(id: number) {    
@@ -66,14 +66,12 @@ export function TaskList() {
           <ButtonCreateTask
            role="criar"
             type="submit"
-            data-testid="add-task-button"
-                   
+            data-testid="add-task-button"                   
           >
             <FiCheckSquare size={16} color="#FFFFFF" />
           </ButtonCreateTask>
         </FormGroup>
       </TaskHeader>
-
       <TaskListContainer>
         <ul>
           {tasks.map((task) => (

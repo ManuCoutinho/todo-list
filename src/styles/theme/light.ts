@@ -13,4 +13,4 @@ export default {
     glassColor: "rgba(255, 255, 255, 0.5)",
     borderGlass: "rgba(209, 213, 219, 0.3)",
   },
-} as const;
+};
