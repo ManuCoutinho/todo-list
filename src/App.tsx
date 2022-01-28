@@ -1,10 +1,10 @@
 import usePersistedState from "./hooks/usePersistedState";
 import ErrorBoundary from "../src/utils/ErrorBoundary";
 import { ThemeProvider } from "styled-components";
-import { Header } from "./components/Header";
+import  { Header } from "./components/Header";
 import { TaskList } from "./components/TaskList";
 
-import { GlobalStyles } from "./styles/global";
+import GlobalStyles from "./styles/global";
 import dark from "./styles/theme/dark";
 import light from "./styles/theme/light";
 
@@ -17,8 +17,7 @@ function App() {
 
 return(
     <ErrorBoundary>
-      <ThemeProvider theme={theme}>
-        {console.log(theme)}
+      <ThemeProvider theme={theme}>        
         <GlobalStyles/>
         <Header toggleTheme={toggleTheme}/>
         <TaskList/>     

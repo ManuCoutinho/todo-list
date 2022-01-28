@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { FiMoon } from "react-icons/fi";
 import { WiDaySunny } from "react-icons/wi";
 import { ThemeContext } from "styled-components";
-import { darken } from "polished"
 import Switch from "react-switch";
 
 import logoImg from "../../assets/logo.svg";
@@ -21,16 +20,15 @@ export function Header({ toggleTheme }: Props) {
       <div>
         <img src={logoImg} 
           alt="Logo To Do" 
-          width="90" 
-          role="logo"        
+          width="90"           
+          aria-label="logo"        
           />
-       <label htmlFor="toggleTheme">
+       <label aria-label="switch theme" htmlFor="switchTheme">
         <Switch
-            role="switch theme"
-            name="toggleTheme"
+            id="switchTheme"            
             onChange={toggleTheme}
-            checked={theme.title === "dark"}
-            onColor={darken(0.6, theme.colors.checkboxTask)}
+            checked={theme.title === "light"}
+            onColor={theme.colors.checkboxTask}
             offColor={theme.colors.mainBackground}
             offHandleColor={theme.colors.checkboxTask}
             onHandleColor={theme.colors.textDefault}
@@ -66,9 +64,9 @@ export function Header({ toggleTheme }: Props) {
                 <FiMoon />
               </span>
             }
-          />
+            />
        </label>
-      </div>
+      </div>           
     </HeaderContainer>
   )
 }

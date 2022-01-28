@@ -18,5 +18,5 @@
   },
   "include": ["./src"],
   "types": ["styled-components"],
-  "files": ["src/styles/theme/styled.d.ts"]
+  
 }

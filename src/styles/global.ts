@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyles = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
 * {
   box-sizing: border-box;
   margin: 0;
@@ -63,3 +63,4 @@ button {
   cursor: pointer;
 }
 `
+export default GlobalStyles

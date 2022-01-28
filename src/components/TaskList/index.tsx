@@ -1,4 +1,4 @@
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, ReactNode } from "react";
 import { FiTrash, FiCheckSquare } from "react-icons/fi";
 
 import { 
@@ -17,6 +17,7 @@ interface Task {
   title: string;
   isComplete: boolean;
 }
+
 
 export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -56,7 +57,7 @@ export function TaskList() {
     <TaskContainer>
       <TaskHeader>
         <h2>Minhas tasks</h2>
-        <FormGroup onSubmit={handleCreateNewTask}>
+        <FormGroup  aria-label="criar tasks" onSubmit={handleCreateNewTask}>
           <input
             type="text"
             placeholder="Adicionar nova tarefa"
@@ -64,7 +65,7 @@ export function TaskList() {
             value={newTaskTitle}
           />
           <ButtonCreateTask
-           role="criar"
+            aria-label="criar"
             type="submit"
             data-testid="add-task-button"                   
           >
@@ -91,11 +92,10 @@ export function TaskList() {
                 <p>{task.title}</p>
               </div>
               <DeleteButton
-                name="excluir"
+                aria-label="excluir task"
                 type="button"
                 data-testid="remove-task-button"
-                onClick={() => handleRemoveTask(task.id)}
-                role="button" aria-label="Deletar task"                
+                onClick={() => handleRemoveTask(task.id)}                             
               >
                 <FiTrash size={16} />
               </DeleteButton>

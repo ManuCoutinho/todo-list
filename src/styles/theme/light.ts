@@ -1,4 +1,4 @@
-export default {
+const light = {
   title: "light",
   colors: {
     mainBackground: "#F2F2F3", 
@@ -14,3 +14,4 @@ export default {
     borderGlass: "rgba(209, 213, 219, 0.3)",
   },
 };
+export default light;
