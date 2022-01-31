@@ -20,4 +20,4 @@ export const HeaderContainer = styled.header`
     padding: 1rem 1rem 13rem;
     gap: 1rem;
   }
-`;
+`

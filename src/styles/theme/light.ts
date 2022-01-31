@@ -11,7 +11,7 @@ const light = {
     checkboxTask: "#58355E",
     buttonDeleteTask: "#C9184a",
     glassColor: "rgba(255, 255, 255, 0.5)",
-    borderGlass: "rgba(209, 213, 219, 0.3)",
+    borderGlass: "rgba(209, 213, 219, 0.3)",    
   },
 };
 export default light;

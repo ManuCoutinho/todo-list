@@ -18,6 +18,7 @@ declare module 'styled-components' {
       white: string,
       glassColor: string,
       borderGlass: string,
+      toggleTheme: string,
     };
   }
 }

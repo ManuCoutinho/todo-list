@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { FiMoon } from "react-icons/fi";
-import { WiDaySunny } from "react-icons/wi";
 import { ThemeContext } from "styled-components";
-import Switch from "react-switch";
+import { Switch, styled } from "@mui/material";
+import { shade }  from "polished";
 
 import logoImg from "../../assets/logo.svg";
+import moonIcon from "../../assets/moon.svg";
+import sunIcon from "../../assets/sun.svg";
 
 import {HeaderContainer} from "./styles"
 
@@ -15,6 +16,54 @@ interface Props {
 export function Header({ toggleTheme }: Props) {
   const theme = useContext(ThemeContext);
   
+  const SwitchTheme = styled(Switch)(() => ({
+    width: 62,
+    height: 34,
+    padding: 9,
+    '& .MuiSwitch-switchBase': {
+      backgroundColor: theme.colors.mainBackground,
+      margin: 1,
+      padding: 0,
+      transform: 'translateX(5px)',
+      '&.Mui-checked': { 
+        color: theme.colors.mainBackground,     
+        transform: 'translateX(26px)',
+        '& .MuiSwitch-thumb:before': {          
+          backgroundImage: `url(${moonIcon})`,
+          backgroundSize: '70%', 
+        },
+        '& + .MuiSwitch-track': {
+          opacity: 1,
+          backgroundColor: shade(0.3, theme.colors.checkboxTask),         
+        },
+      },
+    },
+    '& .MuiSwitch-thumb': {      
+      backgroundColor: theme.title === 'dark' ? "#EBEBEB": "#FFF",         
+      width: 32,
+      height: 32,
+      '&:before': {
+        content: "''",
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        left: 0,
+        top: 0,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundImage: `url(${sunIcon})`,
+        backgroundSize: '70%',                       
+        },
+      },
+      '& .MuiSwitch-track': {
+        opacity: 1,
+        backgroundColor: theme.colors.textDefault,
+        borderRadius: 20/2,   
+      },          
+  }));
+
+  const label = { inputProps: { 'aria-label': 'Alterar o tema' } };
+
   return (
     <HeaderContainer>
       <div>
@@ -23,49 +72,11 @@ export function Header({ toggleTheme }: Props) {
           width="90"           
           aria-label="logo"        
           />
-       <label aria-label="switch theme" htmlFor="switchTheme">
-        <Switch
-            id="switchTheme"            
-            onChange={toggleTheme}
-            checked={theme.title === "light"}
-            onColor={theme.colors.checkboxTask}
-            offColor={theme.colors.mainBackground}
-            offHandleColor={theme.colors.checkboxTask}
-            onHandleColor={theme.colors.textDefault}
-            height={25}
-            width={62}
-            handleDiameter={30}
-            uncheckedIcon={
-              <span
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: "100%",
-                  fontSize: 15,
-                  paddingRight: 3,
-                }}
-              >
-                <WiDaySunny />
-              </span>
-            }
-            checkedIcon={
-              <span
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: "100%",
-                  fontSize: 15,
-                  paddingRight: 2,
-                  paddingBottom: 2,
-                }}
-              >
-                <FiMoon />
-              </span>
-            }
-            />
-       </label>
+          <SwitchTheme 
+              {...label}
+              checked={theme.title === 'dark'}
+              onChange={toggleTheme}           
+          />
       </div>           
     </HeaderContainer>
   )
