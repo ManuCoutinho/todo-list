@@ -1,31 +1,29 @@
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
-import { shade } from 'polished'
 import logoImg from '../../assets/logo.svg'
-import moonIcon from '../../assets/moon.svg'
-import sunIcon from '../../assets/sun.svg'
+import { RiMoonClearLine, RiSunLine } from 'react-icons/ri'
 
-import { HeaderContainer } from './styles'
-
+import * as S from './styles'
 interface Props {
   toggleTheme(): void
 }
 
 export function Header({ toggleTheme }: Props) {
   const theme = useContext(ThemeContext)
-
-  const label = { inputProps: { 'aria-label': 'Alterar o tema' } }
-
+  const Icon = theme.title === 'dark' ? RiMoonClearLine : RiSunLine
   return (
-    <HeaderContainer>
-      <div>
+    <S.HeaderContainer>
+      <S.Wrapper>
         <img src={logoImg} alt='Logo To Do' width='90' aria-label='logo' />
-        {/* <button 
-              {...label}
-              checked={theme.title === 'dark'}
-              onChange={toggleTheme}           
-          /> */}
-      </div>
-    </HeaderContainer>
+        <S.Switch
+          aria-label='alterar tema'
+          role='switch'
+          aria-checked={theme.title === 'dark'}
+          onClick={toggleTheme}
+        >
+          <Icon />
+        </S.Switch>
+      </S.Wrapper>
+    </S.HeaderContainer>
   )
 }

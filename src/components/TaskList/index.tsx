@@ -1,16 +1,7 @@
-import { useState, FormEvent } from 'react'
+import { useState, FormEvent, useEffect } from 'react'
 import { FiTrash, FiCheckSquare } from 'react-icons/fi'
 
-import {
-  ButtonCreateTask,
-  CheckboxContainer,
-  Checkmark,
-  DeleteButton,
-  FormGroup,
-  TaskContainer,
-  TaskHeader,
-  TaskListContainer
-} from './styles'
+import * as S from './styles'
 
 interface Task {
   id: number
@@ -22,6 +13,16 @@ export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([])
   const [newTaskTitle, setNewTaskTitle] = useState('')
 
+  useEffect(() => {
+    const list = localStorage.getItem('tasks')
+    if (list) {
+      return setTasks(JSON.parse(list))
+    }
+  }, [])
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
+
   function handleCreateNewTask(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     if (!newTaskTitle) return
@@ -32,6 +33,8 @@ export function TaskList() {
       isComplete: false
     }
     setTasks((oldState) => [...oldState, newTask])
+    console.log(tasks)
+    localStorage.setItem('tasks', JSON.stringify(tasks))
     setNewTaskTitle('')
   }
 
@@ -45,64 +48,72 @@ export function TaskList() {
         : task
     )
     setTasks(newTasks)
+    localStorage.setItem('tasks', JSON.stringify(newTasks))
   }
 
   function handleRemoveTask(id: number) {
     const filteredTasks = tasks.filter((task) => task.id !== id)
     setTasks(filteredTasks)
+    localStorage.setItem('tasks', JSON.stringify(filteredTasks))
   }
 
   return (
-    <TaskContainer>
-      <TaskHeader>
-        <h2>Minhas tasks</h2>
-        <FormGroup aria-label='criar tasks' onSubmit={handleCreateNewTask}>
-          <input
+    <S.TaskContainer>
+      <S.TaskHeader>
+        <S.Heading>Minhas tasks</S.Heading>
+        <S.Form aria-label='criar tasks' onSubmit={handleCreateNewTask}>
+          <S.Input
             type='text'
+            inputMode='text'
             placeholder='Adicionar nova tarefa'
             onChange={(e) => setNewTaskTitle(e.target.value)}
             value={newTaskTitle}
           />
-          <ButtonCreateTask
+          <S.ButtonCreateTask
             aria-label='criar'
             type='submit'
             data-testid='add-task-button'
           >
             <FiCheckSquare size={16} color='#FFFFFF' />
-          </ButtonCreateTask>
-        </FormGroup>
-      </TaskHeader>
-      <TaskListContainer>
+          </S.ButtonCreateTask>
+        </S.Form>
+      </S.TaskHeader>
+      <S.TaskListContainer>
         <ul>
           {tasks.map((task) => (
-            <li key={task.id}>
-              <div
-                className={task.isComplete ? '.completed' : ''}
-                data-testid='task'
-              >
-                <CheckboxContainer aria-label='Concluir task'>
-                  <input
+            <S.Item key={task.id}>
+              <S.Wrapper data-testid='task'>
+                <S.CheckboxContainer aria-label='Concluir task'>
+                  <S.Task
                     type='checkbox'
+                    aria-labelledby='checked task'
+                    id='task'
                     readOnly
                     checked={task.isComplete}
                     onClick={() => handleToggleTaskCompletion(task.id)}
                   />
-                  <Checkmark></Checkmark>
-                </CheckboxContainer>
-                <p>{task.title}</p>
-              </div>
-              <DeleteButton
+                  <S.Checkmark></S.Checkmark>
+                </S.CheckboxContainer>
+                <S.ItemTitle
+                  htmlFor='task'
+                  completed={task.isComplete}
+                  aria-label='task description'
+                >
+                  {task.title}
+                </S.ItemTitle>
+              </S.Wrapper>
+              <S.DeleteButton
                 aria-label='excluir task'
                 type='button'
                 data-testid='remove-task-button'
                 onClick={() => handleRemoveTask(task.id)}
               >
                 <FiTrash size={16} />
-              </DeleteButton>
-            </li>
+              </S.DeleteButton>
+            </S.Item>
           ))}
         </ul>
-      </TaskListContainer>
-    </TaskContainer>
+      </S.TaskListContainer>
+    </S.TaskContainer>
   )
 }

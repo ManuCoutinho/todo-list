@@ -15,7 +15,7 @@ declare module 'styled-components' {
       buttonCreateTask: string
       checkboxTask: string
       buttonDeleteTask: string
-      white: string
+      primary: string
       glassColor: string
       borderGlass: string
       toggleTheme: string

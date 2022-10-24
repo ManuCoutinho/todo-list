@@ -10,6 +10,7 @@ const light = {
     buttonCreateTask: '#1C9B75',
     checkboxTask: '#58355E',
     buttonDeleteTask: '#C9184a',
+    primary: '#cacaca',
     glassColor: 'rgba(255, 255, 255, 0.5)',
     borderGlass: 'rgba(209, 213, 219, 0.3)'
   }

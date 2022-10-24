@@ -58,7 +58,9 @@ h5,
 h6 {
   font-weight: 700;
 }
-
+ul {
+  list-style: none;
+}
 button {
   cursor: pointer;
 }

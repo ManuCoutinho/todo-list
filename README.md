@@ -57,12 +57,12 @@ $ git clone https://github.com/ManuCoutinho/todo-list
 $ cd todo-list
 
 # Instala as dependências
-$ yarn 
+$ npm install
 
 # Roda o projeto
-$ yarn dev 
+$ npm run dev
 
-# O servidor será inicializado em <http://localhost:3000>
+# O servidor de desenvolvimento será inicializado em <http://localhost:5173>
 ```
 
 ## :page_with_curl: Licença ##
@@ -70,7 +70,7 @@ $ yarn dev
 Este projeto está sob a licença do MIT. Para maiores detalhes, acesse: [LICENSE](LICENSE).
 
 
-Made with ❤️ by <a href="https://github.com/ManuCoutinho" target="_blank">Manu Coutinho</a>
+Made by <a href="https://github.com/ManuCoutinho" target="_blank">Manu Coutinho</a>
 
 &#xa0;
 
