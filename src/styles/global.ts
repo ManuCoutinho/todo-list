@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
 * {
@@ -58,7 +58,9 @@ h5,
 h6 {
   font-weight: 700;
 }
-
+ul {
+  list-style: none;
+}
 button {
   cursor: pointer;
 }

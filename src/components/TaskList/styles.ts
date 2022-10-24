@@ -1,7 +1,32 @@
-import styled from "styled-components";
+import styled, { css } from 'styled-components'
 
+export const Item = styled.li`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.textMuted};
+  padding: 1rem 0;
+`
+export const TaskListContainer = styled.main`
+  margin-top: 3rem;
+`
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  outline: 0;
+`
+
+export const ItemTitle = styled.label<{ completed: boolean }>`
+  ${({ theme, completed }) => css`
+    font-size: 1rem;
+    color: ${theme.colors.textSecondary};
+    text-decoration: ${completed && 'line-through'};
+    opacity: ${completed && `0.6`};
+  `}
+`
 export const TaskContainer = styled.section`
-  @media (max-width: 37.5em){
+  @media (max-width: 37.5em) {
     width: 100%;
     padding: 4rem 1.85rem;
   }
@@ -9,7 +34,7 @@ export const TaskContainer = styled.section`
   width: min(60vw, 80%);
   margin: -12rem auto 0;
   padding: 4.375rem 3.75rem;
-  position: relative;  
+  position: relative;
 
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -26,7 +51,7 @@ export const TaskContainer = styled.section`
 export const TaskHeader = styled.div`
   @media (max-width: 50em) {
     flex-direction: column;
-    margin: 0 auto;    
+    margin: 0 auto;
   }
 
   display: flex;
@@ -35,36 +60,16 @@ export const TaskHeader = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1.25rem;
-
-  h2 {
-    color: ${({ theme }) => theme.colors.textPrimary};
-    font-size: 2.25em;
-  }
 `
-
-export const FormGroup = styled.form`
+export const Heading = styled.h2`
+  color: ${({ theme }) => theme.colors.textPrimary};
+  font-size: 2.25em;
+`
+export const Form = styled.form`
   display: flex;
   align-items: center;
   gap: 1rem;
-
-  input {
-    display: flex;
-    align-items: center;    
-    background: ${({ theme }) => theme.colors.backgroundInput};
-    border: 0;
-    border-radius: 8px;
-    color: ${({ theme }) => theme.colors.textSecondary};
-    padding: 0.75rem 1.5rem;
-    outline: 0;
-    flex-grow: 1; 
-      &:focus {
-        border: 1px solid ${({ theme }) => theme.colors.borderColor};
-      }
-      &::placeholder {
-        color: ${({ theme }) => theme.colors.textPrimary};
-      }
-  }
-`;
+`
 
 export const ButtonCreateTask = styled.button`
   display: flex;
@@ -73,7 +78,7 @@ export const ButtonCreateTask = styled.button`
   background: ${({ theme }) => theme.colors.buttonCreateTask};
   border: 0;
   border-radius: 8px;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.primary};
   font-weight: 600;
   padding: 0.875rem;
   outline: 0;
@@ -86,97 +91,86 @@ export const ButtonCreateTask = styled.button`
   &:focus {
     border: 1px solid ${({ theme }) => theme.colors.borderColor};
   }
-`;
-
-export const TaskListContainer = styled.main`
-  margin-top: 3rem;
-
-  ul {
-    list-style: none;
-
-    li {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid ${({ theme }) => theme.colors.backgroundInput};
-      padding: 1rem 0;
-    }
-
-    div {
-      display: flex;
-      align-items: center;
-      gap: 0.875rem;
-      outline: 0;
-
-      p {
-        font-size: 1em;
-        color: ${({ theme }) => theme.colors.textSecondary};
-      }
-
-      &.completed {
-        p {
-          text-decoration: line-through;
-          opacity: 0.6;
-        }
-      }
-    }
+`
+export const Input = styled.input`
+  display: flex;
+  align-items: center;
+  background: ${({ theme }) => theme.colors.backgroundInput};
+  border: 0;
+  border-radius: 8px;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  padding: 0.75rem 1.5rem;
+  outline: 0;
+  flex-grow: 1;
+  &:focus {
+    border: 1px solid ${({ theme }) => theme.colors.borderColor};
   }
-`;
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.textPrimary};
+  }
+`
 
 export const CheckboxContainer = styled.label`
   display: block;
   position: relative;
   padding-left: 0.875rem;
   margin-bottom: 1.125rem;
+`
 
-  input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+export const Task = styled.input`
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0.5rem;
+  width: 0.5rem;
 
-    &:checked {
-      & ~ span {
-        background-color: ${({ theme }) => theme.colors.checkboxTask};
-        transform: scale(1);
-        transition: all 0.2s;
-      }
+  &:checked {
+    & ~ span {
+      background-color: ${({ theme }) => theme.colors.checkboxTask};
+      transform: scale(1);
+      transition: all 0.2s;
+    }
 
-      & ~ span:after {
-        display: block;
-      }
+    & ~ span:after {
+      display: block;
     }
   }
-`;
+`
 export const Checkmark = styled.span`
   position: absolute;
   top: 0;
   left: 0;
-  width: 1rem;
-  height: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
   background-color: ${({ theme }) => theme.colors.backgroundInput};
   border-radius: 2px;
   transition: transform 0.2s;
+  cursor: pointer;
+  transition: filter 0.2s ease-in-out;
+  &:hover {
+    filter: brightness(0.8);
+    transition: filter 0.2s ease-in-out;
+  }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     display: none;
     left: 6px;
-    top: 3px;
-    width: 3px;
+    top: 4px;
+    width: 4px;
     height: 6px;
-    border: solid ${({ theme }) => theme.colors.white};
+    border: solid ${({ theme }) => theme.colors.primary};
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
   }
-`;
+`
 
 export const DeleteButton = styled.button`
   background: transparent;
   border: 0;
   outline: 0;
+  transition: filter 0.2s ease-in-out;
   svg {
     color: ${({ theme }) => theme.colors.buttonDeleteTask};
   }
@@ -184,6 +178,7 @@ export const DeleteButton = styled.button`
   &:hover {
     svg {
       filter: brightness(0.5);
+      transition: filter 0.2s ease-in-out;
     }
   }
-`;
+`

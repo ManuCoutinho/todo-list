@@ -1,15 +1,15 @@
 <div align="center" id="top"> 
-  <img src="https://media.giphy.com/media/Q7K3I8uQjPZDhJWmwN/giphy.gif" alt="Todo List" />
+  <img src="https://media.giphy.com/media/Q7K3I8uQjPZDhJWmwN/giphy.gif" alt="Todo List gif" />
 
   &#xa0;  
 </div>
 
 <h1 align="center">Todo List</h1>
-
 <p align="center">  
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/ManuCoutinho/todo-list?color=C9184a"> 
-  <img src="https://img.shields.io/website-up-down-green-red/http/monip.org.svg"/>
-  <img alt="License" src="https://img.shields.io/github/license/ManuCoutinho/todo-list?color=C9184a"> 
+  <img alt="Github language count" src="https://img.shields.io/github/languages/top/ManuCoutinho/todo-list?color=C9184a&style=for-the-badge"> 
+  <img alt='netlify' src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white"/>
+  <img alt="License" src="https://img.shields.io/github/license/ManuCoutinho/todo-list?color=C9184a&style=for-the-badge"> 
+  <img alt='vitejs' src='https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E'/>
 </p>
 
 <p align="center">
@@ -25,31 +25,28 @@
 
 ## :dart: Sobre ## 
 
-Mini projeto que cria uma lista de tarefas ou lembretes, quais podem ser excluídos conforme a necessidade do(a) usuário(a). Disponível em 🌞 e 🌙 modes.
+Mini projeto que cria uma lista para gerenciar suas tarefas e/ou lembretes. Disponível nos temas  🌞 e 🌙.
 
-Você pode encontrar o deploy da aplicação em [aqui 🔗](https://sharp-cray-1a5038.netlify.app/).
+Você pode testar a aplicação em [aqui 🔗](https://sharp-cray-1a5038.netlify.app/).
 
 
 ## :rocket: Tecnologias ##
 
-* Aplicação desenvolvida no template __React__ do [_Vite.js_](https://vitejs.dev/) com utilização do __TypeScript__
-* Estilização com [_Styled-Components_](https://styled-components.com/)
-* Libs:
-   * [React Icons](https://react-icons.github.io/react-icons/)
-   * [Polished](https://polished.js.org/) 
-   * [MUI/Material](https://mui.com/)   
-* Fonte: Poppins by [_Google Fonts_](https://fonts.google.com/)
-* Interface adaptada para dispositivos mobile 📱
+Neste projeto são usadas as seguintes tecnologias e ferramentas:
 
-## :heavy_check_mark: Requerimentos ##
+- [Vite](vitejs.dev/)
+- [React](https://pt-br.reactjs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com)
 
-Optei por utilizar o template React para Vite.js para otimizar o build da aplicação. Portanto, requer a instalação prévia do Node.Js e a execução do comando:
-`yarn init` ou `npm install`
+## :white_check_mark: Requerimentos ##
+
+Antes de começar :checkered_flag, você precisar ter o [Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/) instalados no seu ambiente.
 
 
 ## :desktop_computer: Comandos ##
 
-```cmd
+```bash
 # Clona este projeto
 $ git clone https://github.com/ManuCoutinho/todo-list
 
@@ -57,12 +54,12 @@ $ git clone https://github.com/ManuCoutinho/todo-list
 $ cd todo-list
 
 # Instala as dependências
-$ yarn 
+$ npm install
 
 # Roda o projeto
-$ yarn dev 
+$ npm run dev
 
-# O servidor será inicializado em <http://localhost:3000>
+# O servidor de desenvolvimento será inicializado em <http://localhost:5173>
 ```
 
 ## :page_with_curl: Licença ##
@@ -70,7 +67,7 @@ $ yarn dev
 Este projeto está sob a licença do MIT. Para maiores detalhes, acesse: [LICENSE](LICENSE).
 
 
-Made with ❤️ by <a href="https://github.com/ManuCoutinho" target="_blank">Manu Coutinho</a>
+Made by <a href="https://github.com/ManuCoutinho" target="_blank">Manu Coutinho</a>
 
 &#xa0;
 
