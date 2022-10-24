@@ -1,19 +1,19 @@
-import styled from "styled-components";
-import bannerImg from "../../assets/background.svg";
+import styled from 'styled-components'
+import bannerImg from '../../assets/background.svg'
 
 export const HeaderContainer = styled.header`
-  @media (max-width: 37.5em){
-      width: 100%;
-      padding-top: 7rem; 
+  @media (max-width: 37.5em) {
+    width: 100%;
+    padding-top: 7rem;
   }
 
   background: url(${bannerImg}) no-repeat;
   background-size: cover;
-  padding-top: 10rem;  
-  
+  padding-top: 10rem;
+
   > div {
     display: flex;
-    align-items: center;  
+    align-items: center;
     justify-content: space-between;
     max-width: 60vw;
     margin: 0 auto;

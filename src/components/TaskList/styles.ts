@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const TaskContainer = styled.section`
-  @media (max-width: 37.5em){
+  @media (max-width: 37.5em) {
     width: 100%;
     padding: 4rem 1.85rem;
   }
@@ -9,7 +9,7 @@ export const TaskContainer = styled.section`
   width: min(60vw, 80%);
   margin: -12rem auto 0;
   padding: 4.375rem 3.75rem;
-  position: relative;  
+  position: relative;
 
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -26,7 +26,7 @@ export const TaskContainer = styled.section`
 export const TaskHeader = styled.div`
   @media (max-width: 50em) {
     flex-direction: column;
-    margin: 0 auto;    
+    margin: 0 auto;
   }
 
   display: flex;
@@ -49,22 +49,22 @@ export const FormGroup = styled.form`
 
   input {
     display: flex;
-    align-items: center;    
+    align-items: center;
     background: ${({ theme }) => theme.colors.backgroundInput};
     border: 0;
     border-radius: 8px;
     color: ${({ theme }) => theme.colors.textSecondary};
     padding: 0.75rem 1.5rem;
     outline: 0;
-    flex-grow: 1; 
-      &:focus {
-        border: 1px solid ${({ theme }) => theme.colors.borderColor};
-      }
-      &::placeholder {
-        color: ${({ theme }) => theme.colors.textPrimary};
-      }
+    flex-grow: 1;
+    &:focus {
+      border: 1px solid ${({ theme }) => theme.colors.borderColor};
+    }
+    &::placeholder {
+      color: ${({ theme }) => theme.colors.textPrimary};
+    }
   }
-`;
+`
 
 export const ButtonCreateTask = styled.button`
   display: flex;
@@ -86,7 +86,7 @@ export const ButtonCreateTask = styled.button`
   &:focus {
     border: 1px solid ${({ theme }) => theme.colors.borderColor};
   }
-`;
+`
 
 export const TaskListContainer = styled.main`
   margin-top: 3rem;
@@ -121,7 +121,7 @@ export const TaskListContainer = styled.main`
       }
     }
   }
-`;
+`
 
 export const CheckboxContainer = styled.label`
   display: block;
@@ -148,7 +148,7 @@ export const CheckboxContainer = styled.label`
       }
     }
   }
-`;
+`
 export const Checkmark = styled.span`
   position: absolute;
   top: 0;
@@ -160,7 +160,7 @@ export const Checkmark = styled.span`
   transition: transform 0.2s;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     display: none;
     left: 6px;
@@ -171,7 +171,7 @@ export const Checkmark = styled.span`
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
   }
-`;
+`
 
 export const DeleteButton = styled.button`
   background: transparent;
@@ -186,4 +186,4 @@ export const DeleteButton = styled.button`
       filter: brightness(0.5);
     }
   }
-`;
+`
