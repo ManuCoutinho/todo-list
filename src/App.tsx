@@ -1,5 +1,5 @@
 import usePersistedState from './hooks/usePersistedState'
-import ErrorBoundary from '../src/utils/ErrorBoundary'
+import ErrorBoundary from './components/ErrorBoundary'
 import { ThemeProvider } from 'styled-components'
 import { Header } from './components/Header'
 import { TaskList } from './components/TaskList'

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Component, ErrorInfo, ReactNode } from 'react'
-import NotFound from '.'
+import * as S from './styles'
+import emptyImg from '/assets/404.svg'
 type Props = ReactNode
 
 interface State {
@@ -22,7 +23,11 @@ class ErrorBoundary extends Component<Props, State> {
 
   public render() {
     if (this.state.hasError) {
-      return <NotFound />
+      return (
+        <S.Container>
+          <p>Ooops!! Como vc chegou aqui?</p>
+        </S.Container>
+      )
     }
 
     return this.props.children

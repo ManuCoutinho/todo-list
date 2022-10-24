@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import bannerImg from '../../assets/background.svg'
+import bannerImg from '/assets/background.svg'
 
 export const HeaderContainer = styled.header`
   @media (max-width: 37.5em) {

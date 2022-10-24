@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
-import logoImg from '../../assets/logo.svg'
+import logoImg from '/assets/logo.svg'
 import { RiMoonClearLine, RiSunLine } from 'react-icons/ri'
 
 import * as S from './styles'
@@ -11,6 +11,7 @@ interface Props {
 export function Header({ toggleTheme }: Props) {
   const theme = useContext(ThemeContext)
   const Icon = theme.title === 'dark' ? RiMoonClearLine : RiSunLine
+
   return (
     <S.HeaderContainer>
       <S.Wrapper>
