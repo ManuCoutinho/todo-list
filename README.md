@@ -41,7 +41,7 @@ Neste projeto são usadas as seguintes tecnologias e ferramentas:
 
 ## :white_check_mark: Requerimentos ##
 
-Antes de começar :checkered_flag, você precisar ter o [Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/) instalados no seu ambiente.
+Antes de começar :checkered_flag:, você precisar ter o [Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/) instalados no seu ambiente.
 
 
 ## :desktop_computer: Comandos ##
